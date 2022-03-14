@@ -23,11 +23,17 @@ Parameter
 | ------------- | -------------- | --------------------------   |:-------------:|
 | siAvg         | Integer        | 시 전체 평균 미세먼지(㎍/㎥)  | O             |
 | PM25          | Float          | 초미세먼지농도(㎍/㎥)         | O             |
+| PM25Grade     | String         | 초미세먼지농도 등급           | O             |
 | PM10          | Float          | 미세먼지(㎍/㎥)               | O             |
+| PM10Grade     | String         | 미세먼지 등급                 | O             |
 | O3            | Float          | 오존(ppm)                     | O             |   
-| NO2           | Float          | 이산화질소농도(ppm)           | O             |
-| CO            | Float          | 일산화탄소농도(ppm)           | O             |
-| SO2           | Float          | 아황산가스농도(ppm)           | O             |   
+| O3Grade       | String         | 오존 등급                     | O             |
+| NO2           | Float          | 이산화질소 농도(ppm)          | O             |
+| NO2Grade      | String         | 이산화질소 농도 등급          | O             |
+| CO            | Float          | 일산화탄소 농도(ppm)          | O             |
+| NO2Grade      | String         | 일산화탄소 농도 등급          | O             |
+| SO2           | Float          | 아황산가스 농도(ppm)          | O             | 
+| NO2Grade      | String         | 아황산가스 농도 등급          | O             |
 
 
 
@@ -48,12 +54,18 @@ curl -v -G GET "http://localhost:8080/v1/api/air-quality" \
 ```JSON
 HTTP/1.1 200 OK
 {
-  "siAvg":5,
+  "siAvg": 5,
   "PM25": 2.0,
+  "PM25Grade": "좋음",
   "PM10": 6.0,
+  "PM10Grade": "좋음",
   "O3": 0.039,
+  "O3Grade": "좋음",
   "NO2":0.025,
+  "NO2Grade": "좋음",
   "CO": 0.4,
-  "SO2":0.002
+  "COGrade": "좋음",
+  "SO2":0.002,
+  "SO2Grade": "좋음"
 }
 ```
