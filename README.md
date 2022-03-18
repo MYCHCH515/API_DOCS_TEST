@@ -98,7 +98,7 @@ HTTP/1.1 200 OK
 ### Request : 자치구별 대기질 정보 조회
 
 ```HTTP
-GET http://localhost:8080/v1/api/air-quality/seoul?gu=용산구
+GET http://localhost:8080/v1/api/air-quality/seoul?gu=중구
 ```
 
 ### Response
