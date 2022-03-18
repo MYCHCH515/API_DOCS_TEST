@@ -45,31 +45,83 @@ Parameter
 
 > Sample
 
-### Request : 서울시 용산구 
+### Request : 서울시 전체 자치구 대기질 정보 조회
 
-```
-curl -v -G GET "http://localhost:8080/v1/api/air-quality" \
-     -d "sidoNm=서울시" \
-     -d "guDongNm=용산구" \
+```HTTP
+GET http://localhost:8080/v1/api/air-quality/seoul
 ```
 
 ### Response
 
 ```JSON
 HTTP/1.1 200 OK
-{
-  "siAvg": 5,
-  "PM25": 2.0,
-  "PM25Grade": "좋음",
-  "PM10": 6.0,
-  "PM10Grade": "좋음",
-  "O3": 0.039,
-  "O3Grade": "좋음",
-  "NO2":0.025,
-  "NO2Grade": "좋음",
-  "CO": 0.4,
-  "COGrade": "좋음",
-  "SO2":0.002,
-  "SO2Grade": "좋음"
+{  
+  "sido": "서울시",
+  "sidoPm10Avg": 4,
+  "sidoPm10AvgGrade": "좋음",
+  "guList": [
+      {
+       "gu": "중구",
+       "pm25": 5,
+       "pm25Grade": "좋음",
+       "pm10": 10,
+       "pm10Grade": "좋음",
+       "o3": 0.039,
+       "o3Grade": "보통",
+       "no2": 0.015,
+       "no2Grade": "좋음",
+       "co": 0.3,
+       "coGrade": "좋음",
+       "so2": 0.003,
+       "so2Grade": "좋음"  
+     },
+     {
+       "gu": "종로구",
+       "pm25": 3,
+       "pm25Grade": "보통",
+       "pm10": 6,
+       "pm10Grade": "보통",
+       "o3": 0.037,
+       "o3Grade": "좋음",
+       "no2": 0.010,
+       "no2Grade": "좋음",
+       "co": 0.3,
+       "coGrade": "좋음",
+       "so2": 0.002,
+       "so2Grade": "좋음"  
+     },
+     ...
+  ]
 }
+```
+
+### Request : 자치구별 대기질 정보 조회
+
+```HTTP
+GET http://localhost:8080/v1/api/air-quality/seoul?gu=용산구
+```
+
+### Response
+
+```JSON
+HTTP/1.1 200 OK
+"sido": "서울시",
+  "sidoPm10Avg": 4,
+  "sidoPm10AvgGrade": "좋음",
+  "guList": [
+      {
+       "gu": "중구",
+       "pm25": 5,
+       "pm25Grade": "좋음",
+       "pm10": 10,
+       "pm10Grade": "좋음",
+       "o3": 0.039,
+       "o3Grade": "보통",
+       "no2": 0.015,
+       "no2Grade": "좋음",
+       "co": 0.3,
+       "coGrade": "좋음",
+       "so2": 0.003,
+       "so2Grade": "좋음"  
+     },
 ```
