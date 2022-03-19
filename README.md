@@ -22,7 +22,7 @@ Parameter
 |Name                |Child            |Type            |Description                                                   |Required       |
 | ------------------ | :------------: | -------------- | ------------------------------------------------------------ |:-------------:|
 | sido               | -              | String         | 시/도 명                                                     | O             |
-| sidoPm10Avg        | -              | Double         | 시 전체 평균 미세먼지 수치 (㎍/㎥)                            | X             |
+| sidoPm10Avg        | -              | Integer        | 시 전체 평균 미세먼지 수치 (㎍/㎥)                            | X             |
 | sidoPm10AvgGrade   | -              | String         | 시 전체 평균 미세먼지 등급 ex) *좋음 , 보통, 나쁨, 매우나쁨*  | X             |
 | guList             | -              | Array          | 자치구 대기질 정보 리스트                                    | X             |
 |                    | gu             | String         | 자치구 명 ex) *용산구, 마포구, ...*                          | X             |
